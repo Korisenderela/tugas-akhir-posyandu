@@ -6,7 +6,7 @@
 	<div class="col-md-4 mb-3">
 		<div class="card">
 			<div class="card-body shadow">
-				<img src="{{asset('system/public')}}/{{$item->foto}}" width="100%" alt="">
+				<img src="{{url('public/app/berita')}}/{{$item->foto}}" width="100%" alt="">
 				<p class="mt-3"><a href="{{url('x/berita',$item->berita_id)}}/detail">{{ucwords(Str::limit($item->judul,60))}}</a>
 				</p>
 			</div>
