@@ -9,6 +9,7 @@ use App\Http\Controllers\Ortu\OrtuProfilController;
 Route::middleware('auth:orangtua')->prefix('x')->group(function () {
     Route::controller(OrtuController::class)->group(function () {
         Route::get('beranda', 'beranda');
+        Route::get('berita/{berita}/detail', 'detailBerita');
     });
 
 

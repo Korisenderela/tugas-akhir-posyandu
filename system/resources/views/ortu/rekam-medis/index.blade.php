@@ -18,7 +18,7 @@
 				</thead>
 
 				<tbody>
-					@foreach($list_rm as $item)
+					@foreach($list_rm->sortByDesc('created_at') as $item)
 					<tr>
 						<td>{{$item->rekam_medis_kode}}</td>
 						<td>{{ucwords($item->anak->anak_nama)}}</td>

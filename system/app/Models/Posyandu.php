@@ -33,7 +33,7 @@ class Posyandu extends Model
     }
 
 
-          function handleUploadFoto(){
+    function handleUploadFoto(){
         if(request()->hasFile('posyandu_foto')){
             $this->handleDeleteFoto();
             $foto = request()->file('posyandu_foto');
@@ -49,11 +49,11 @@ class Posyandu extends Model
         $foto= $this->posyandu_foto;
         if($foto){
             $path = public_path($foto);
-        if(file_exists($path)){
-            unlink($path);
+            if(file_exists($path)){
+                unlink($path);
 
-        }
-    return true;
+            }
+            return true;
         }
     }
 }

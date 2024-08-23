@@ -11,6 +11,7 @@ use App\Http\Controllers\Admin\AdminProfilPosyanduController;
 use App\Http\Controllers\Admin\AdminProfilAkunController;
 use App\Http\Controllers\Admin\AdminDaftarController;
 use App\Http\Controllers\Admin\AdminLaporanController;
+use App\Http\Controllers\Admin\AdminBeritaController;
 
 
 
@@ -32,6 +33,17 @@ Route::middleware('auth:admin')->prefix('admin')->group(function () {
         
         Route::get('meja-3/{rekammedis}', 'meja3');
         Route::put('meja-3/{rekammedis}/meja-3', 'updateMeja3');
+    });
+
+
+ Route::controller(AdminBeritaController::class)->group(function () {
+        Route::get('berita', 'index');
+        Route::get('berita/create', 'create');
+        Route::post('berita/create', 'store');
+        Route::get('berita/{berita}/delete', 'destroy');
+        Route::get('berita/{berita}/edit', 'edit');
+        Route::get('berita/{berita}/detail', 'show');
+        Route::put('berita/{berita}/edit', 'update');
     });
 
     Route::prefix('master-data')->group(function () {
@@ -60,6 +72,8 @@ Route::middleware('auth:admin')->prefix('admin')->group(function () {
             Route::get('data-orangtua', 'index');
             Route::get('data-orangtua/{anak}/perkembangan', 'perkembangan');
             Route::get('data-orangtua/{anak}/detail', 'show');
+            Route::get('data-orangtua/{anak}/edit', 'edit');
+            Route::put('data-orangtua/{anak}/edit', 'update');
             Route::get('data-orangtua/{anak}/delete', 'destroy');
         });
 

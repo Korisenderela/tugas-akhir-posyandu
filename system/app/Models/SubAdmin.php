@@ -15,6 +15,7 @@ class SubAdmin extends Authenticatable
       use HasApiTokens, HasFactory, Notifiable;
     protected $table = 'subadmin';
     protected $primaryKey = 'subadmin_id';
+    protected $fillable = ['email','password'];
 
 
     protected static function boot(){

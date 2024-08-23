@@ -5,6 +5,7 @@ use App\Http\Controllers\AuthController;
 
 use App\Http\Controllers\Sub\SubAdminController;
 use App\Http\Controllers\Sub\SubPosyanduController;
+use App\Http\Controllers\Sub\SubAnakController;
 
 
 
@@ -35,6 +36,11 @@ include 'ortuRoute.php';
 Route::prefix('subadmin')->middleware('auth:subadmin')->group(function () {
     Route::controller(SubAdminController::class)->group(function () {
         Route::get('beranda', 'beranda');
+        Route::get('imunisasi', 'imunisasi');
+        Route::get('imunisasi', 'imunisasi');
+        Route::get('profil-akun', 'profilAkun');
+        Route::get('profil-akun/update', 'updateProfil');
+        Route::get('imunisasi/{imunisasi}/delete', 'destroyImunisasi');
     });
 
 
@@ -46,6 +52,10 @@ Route::prefix('subadmin')->middleware('auth:subadmin')->group(function () {
             Route::get('data-posyandu/{posyandu}/detail', 'show');
             Route::put('data-posyandu/{posyandu}/detail', 'update');
             Route::get('data-posyandu/{posyandu}/delete', 'destroy');
+        });
+
+        Route::controller(SubAnakController::class)->group(function () {
+            Route::get('data-anak', 'index');
         });
     });
 

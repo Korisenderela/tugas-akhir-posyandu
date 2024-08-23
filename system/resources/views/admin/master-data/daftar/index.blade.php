@@ -94,14 +94,14 @@
 				<div class="col-md-6">
 					<div class="form-group">
 						<span>No Akte</span>
-						<input type="number" name="anak_no_akte" class="form-control">
+						<input type="number" required name="anak_no_akte" class="form-control">
 					</div>
 				</div>
 
 				<div class="col-md-6">
 					<div class="form-group">
 						<span>NIK Anak</span>
-						<input type="number" name="anak_nik" class="form-control">
+						<input type="number" required name="anak_nik" class="form-control">
 					</div>
 				</div>
 
@@ -147,7 +147,7 @@
 				<div class="col-md-6 mt-4">
 					<div class="form-group">
 						<span>Berat Badan Anak <sup>(Kg)</sup></span>
-						<input type="number" required name="anak_bb" class="form-control">
+						<input type="text" id="inputBb" pattern="\d+(\.\d{1,2})?" required name="anak_bb" class="form-control">
 					</div>
 				</div>
 
@@ -155,7 +155,7 @@
 				<div class="col-md-6 mt-4">
 					<div class="form-group">
 						<span>Tinggi Badan Anak <sup>(cm)</sup></span>
-						<input type="number" required name="anak_tb" class="form-control">
+						<input type="text" id="inputTb" pattern="\d+(\.\d{1,2})?" required name="anak_tb" class="form-control">
 					</div>
 				</div>
 
@@ -204,4 +204,18 @@ function cekUid(){
 setInterval(cekUid, 8000);
 </script>
 
+
+<script>
+	document.getElementById('inputBb').addEventListener('input', function (e) {
+		var value = e.target.value;
+		e.target.value = value.replace(/[^0-9.]/g, '');
+	});
+</script>
+
+<script>
+	document.getElementById('inputTb').addEventListener('input', function (e) {
+		var value = e.target.value;
+		e.target.value = value.replace(/[^0-9.]/g, '');
+	});
+</script>
 @endsection

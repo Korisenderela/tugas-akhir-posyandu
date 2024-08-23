@@ -106,6 +106,7 @@ function meja1(RekamMedis $rekammedis){
 
 function updateMeja1(RekamMedis $rekammedis){
     $rekammedis->rekam_medis_bb = request('rekam_medis_bb');
+    $rekammedis->lingkaran_kepala = request('lingkaran_kepala');
     $rekammedis->rekam_medis_status_periksa = 2;
     $rekammedis->rekam_medis_meja_1 = Auth::guard('admin')->user()->admin_id;
     $rekammedis->save();
@@ -150,7 +151,7 @@ function updateMeja3(RekamMedis $rekammedis){
    $rekammedis->rekam_medis_keterangan = request('rekam_medis_keterangan');
    $rekammedis->rekam_medis_catatan = request('rekam_medis_catatan');
    $rekammedis->save();
-   return back()->with('success','Selesai');
+   return redirect('admin/dashboard-pelayanan')->with('success','Selesai');
 }
 
 }

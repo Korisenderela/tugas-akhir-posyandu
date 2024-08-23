@@ -36,27 +36,51 @@
 						<th>Tanggal Lahir </th>
 						<td>: {{Carbon\carbon::parse($anak->anak_tanggal_lahir)->format('d M Y')}}</td>
 					</tr>
+
+					<tr>
+						<th>Umur (Tahun)</th>
+						<td>: 
+							{{Carbon\carbon::parse($anak->anak_tanggal_lahir)->diffInYears(Carbon\Carbon::parse(date('Y-m-d'))) }} Tahun
+
+						</td>
+					</tr>
+
+					<tr>
+						<th>Umur (Bulan)</th>
+						<td>: 
+							{{Carbon\carbon::parse($anak->anak_tanggal_lahir)->diffInMonths(Carbon\Carbon::parse(date('Y-m-d'))) }} Bulan
+
+						</td>
+					</tr>
+
+					<tr>
+							<th>Umur (Hari)</th>
+							<td>: 
+								{{Carbon\carbon::parse($anak->anak_tanggal_lahir)->diffInDays(Carbon\Carbon::parse(date('Y-m-d'))) }} Hari
+
+							</td>
+						</tr>
 				</table>
 				<h3 class="text-primary">Biodata Orang Tua</h3>
 				<table class="table">
 					<tr>
 						<th>Nama Ibu</th>
-						<td>: {{ucwords($ortu->orang_tua_ibu)}}</td>
+						<td>: {{ucwords($ortu->orang_tua_ibu ?? 'Relasi data not found')}}</td>
 					</tr>
 
 					<tr>
 						<th>Nama Ayah</th>
-						<td>: {{ucwords($ortu->orang_tua_ayah)}}</td>
+						<td>: {{ucwords($ortu->orang_tua_ayah ?? 'Relasi data not found')}}</td>
 					</tr>
 
 					<tr>
 						<th>Alamat</th>
-						<td>: {{ucwords($ortu->orang_tua_alamat)}}</td>
+						<td>: {{ucwords($ortu->orang_tua_alamat ?? 'Relasi data not found')}}</td>
 					</tr>
 
 					<tr>
 						<th>Rt/Rw</th>
-						<td>:  {{ucwords($ortu->orang_tua_rt)}}/ {{ucwords($ortu->orang_tua_rw)}}</td>
+						<td>:  {{ucwords($ortu->orang_tua_rt ?? 'Relasi data not found')}}/ {{ucwords($ortu->orang_tua_rw ?? 'Relasi data not found')}}</td>
 					</tr>
 				</table>
 			</div>
@@ -80,10 +104,10 @@
 					<h4>(Pengukuran Tinggi Badan)</h4>
 
 
-					<form action="{{url('admin/meja-2',$detail->rekam_medis_id)}}/meja-2" method="post">
+					<form action="{{ url('admin/meja-2', $detail->rekam_medis_id) }}/meja-2" method="post">
 						@csrf
 						@method("PUT")
-						<input type="text" class="form-bb" placeholder="Tinggi Badan" value="{{$detail->rekam_medis_tb}}" name="rekam_medis_tb"> Cm <br>
+						<input type="text" id="inputTb" required class="form-bb" placeholder="Tinggi Badan" value="{{ $detail->rekam_medis_tb }}" name="rekam_medis_tb" title="Hanya angka dan titik yang diperbolehkan"> Cm <br>
 						<button class="btn btn-primary mt-3">LANJUT MEJA 2</button>
 					</form>
 				</center>
@@ -113,5 +137,12 @@
 		</div>
 	</div>
 </div>
+
+<script>
+	document.getElementById('inputTb').addEventListener('input', function (e) {
+		var value = e.target.value;
+		e.target.value = value.replace(/[^0-9.]/g, '');
+	});
+</script>
 
 @endsection

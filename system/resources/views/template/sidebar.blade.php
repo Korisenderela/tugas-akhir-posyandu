@@ -18,40 +18,22 @@
 					<span class="label">Data Anak</span>
 				</a>
 			</li>
+
 			<li>
-				<a href="{{url('subadmin/master-data/pegawai-posyandu')}}">
-					<span class="label">Pegawai Posyandu</span>
-				</a>
-			</li>
-			<li>
-				<a href="{{url('subadmin/master-data/data-orangtua')}}">
-					<span class="label">Data Orang Tua</span>
-				</a>
-			</li>
-			<li>
-				<a href="{{url('subadmin/master-data/data-anak')}}">
-					<span class="label">Data Anak</span>
+				<a href="{{url('subadmin/master-data/data-posyandu')}}">
+					<span class="label">Data Posyandu</span>
 				</a>
 			</li>
 		</ul>
 	</li>
+
 
 	<li>
-		<a href="#laporan" data-href="">
-			<i data-acorn-icon="home-garage" class="icon" data-acorn-size="18"></i>
-			<span class="label">Laporan</span>
+		<a href="{{url('subadmin/imunisasi')}}">
+			<i class="bi bi-4-square"></i>
+			<span class="label">Imuniasasi</span>
 		</a>
-		<ul id="laporan">
-
-			<li>
-				<a href="{{url('subadmin/laporan/pegawai-posyandu')}}">
-					<span class="label">Laporan Imunisasi</span>
-				</a>
-			</li>
-		</ul>
 	</li>
-
-
 	<li>
 		<a href="{{url('subadmin/profil-akun')}}">
 			<i class="bi bi-4-square"></i>
@@ -98,7 +80,7 @@
 
 					<li>
 						<a href="{{url('admin/master-data/data-pegawai')}}">
-							<span class="label">Data Tim Medis</span>
+							<span class="label">Data Pegawai</span>
 						</a>
 					</li>
 
@@ -114,6 +96,14 @@
 
 
 		<li>
+			<a href="{{url('admin/berita')}}">
+				<i class="bi bi-newspaper" style="font-size: 14pt;"></i>
+				<span class="label">Event</span>
+			</a>
+		</li>
+
+
+	<li>
 			<a href="{{url('admin/master-data/data-orangtua')}}">
 				<i class="bi bi-bar-chart-fill" style="font-size: 14pt;"></i>
 				<span class="label">Perkembangan Anak</span>

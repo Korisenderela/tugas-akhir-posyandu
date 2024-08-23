@@ -96,6 +96,6 @@ class AuthController extends Controller
 
        }
 
-       return back()->with('success','RFID telah dikirim');
+       return back()->with('success','Kode RFID telah dikirim');
    }
 }

@@ -11,6 +11,10 @@ class Imunisasi extends Model
     protected $table = 'imunisasi';
     protected $primaryKey = 'imunisasi_id';
 
+     function posyandu(){
+        return $this->belongsTo(Posyandu::class, 'imunisasi_pos_id');
+    }
+
 
     protected static function boot(){
         parent::boot();

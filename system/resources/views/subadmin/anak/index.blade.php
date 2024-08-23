@@ -39,7 +39,6 @@
 					<th class="text-white">Nama Anak</th>
 					<th class="text-white">Nama Ibu</th>
 					<th class="text-white">Nama Ayah</th>
-					<th class="text-center text-white">Aksi</th>
 				</tr>
 			</thead>
 
@@ -53,17 +52,6 @@
 					<td>{{ucwords($item->anak->anak_nama)}}</td>
 					<td>{{ucwords($item->anak->ortu->orang_tua_ibu)}}</td>
 					<td>{{ucwords($item->anak->ortu->orang_tua_ayah)}}</td>
-					<td class="text-center">
-						<div class="btn-group">
-							<a href="{{url('admin/master-data/data-orangtua',$item->rfid_anak_id)}}/detail" class="btn btn-primary" title="Lihat"><i class="bi bi-eye"></i></a>
-
-							<a href="{{url('admin/master-data/data-orangtua',$item->rfid_anak_id)}}/edit" class="btn btn-warning" title="Edit"><i class="bi bi-pen"></i></a>
-							
-							<a href="{{url('admin/master-data/data-orangtua',$item->rfid_anak_id)}}/perkembangan" title="Grafik Perkembangan" class="btn btn-secondary"><i class="bi bi-bar-chart-line"></i></a>
-							
-							<a href="{{url('admin/master-data/data-orangtua',$item->rfid_anak_id)}}/delete" class="btn btn-danger" title="Hapus" onclick="return confirm('Yakin menghapus data anak ini?')"><i class="bi bi-trash-fill"></i> </a>
-						</div>
-					</td>
 				</tr>
 				@endforeach
 			</tbody>
@@ -76,7 +64,6 @@
 					<th class="text-white">Nama Anak</th>
 					<th class="text-white">Nama Ibu</th>
 					<th class="text-white">Nama Ayah</th>
-					<th class="text-center text-white">Aksi</th>
 				</tr>
 			</tfoot>
 		</table>

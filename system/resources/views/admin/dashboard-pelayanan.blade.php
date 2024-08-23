@@ -82,7 +82,7 @@
 		'</tr>'+
 
 		'<tr>'+
-		'<th colspan="2"><a href="{{url('admin')}}/proses-anak/'+data.anak_id+'" class="btn btn-primary">Rekam Data</a> </th>'+
+		'<th colspan="2"><a href="{{url('admin')}}/proses-anak/'+data.anak_id+'" class="btn btn-primary">Cek Anak</a> </th>'+
 		'</tr>'+
 
 		'</table>';

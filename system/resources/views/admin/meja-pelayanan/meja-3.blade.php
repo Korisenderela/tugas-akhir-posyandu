@@ -36,27 +36,51 @@
 						<th>Tanggal Lahir </th>
 						<td>: {{Carbon\carbon::parse($anak->anak_tanggal_lahir)->format('d M Y')}}</td>
 					</tr>
+
+					<tr>
+						<th>Umur (Tahun)</th>
+						<td>: 
+							{{Carbon\carbon::parse($anak->anak_tanggal_lahir)->diffInYears(Carbon\Carbon::parse(date('Y-m-d'))) }} Tahun
+
+						</td>
+					</tr>
+
+					<tr>
+						<th>Umur (Bulan)</th>
+						<td>: 
+							{{Carbon\carbon::parse($anak->anak_tanggal_lahir)->diffInMonths(Carbon\Carbon::parse(date('Y-m-d'))) }} Bulan
+
+						</td>
+					</tr>
+
+					<tr>
+						<th>Umur (Hari)</th>
+						<td>: 
+							{{Carbon\carbon::parse($anak->anak_tanggal_lahir)->diffInDays(Carbon\Carbon::parse(date('Y-m-d'))) }} Hari
+
+						</td>
+					</tr>
 				</table>
 				<h3 class="text-primary">Biodata Orang Tua</h3>
 				<table class="table">
 					<tr>
 						<th>Nama Ibu</th>
-						<td>: {{ucwords($ortu->orang_tua_ibu)}}</td>
+						<td>: {{ucwords($ortu->orang_tua_ibu ?? 'Relasi data not found')}}</td>
 					</tr>
 
 					<tr>
 						<th>Nama Ayah</th>
-						<td>: {{ucwords($ortu->orang_tua_ayah)}}</td>
+						<td>: {{ucwords($ortu->orang_tua_ayah ?? 'Relasi data not found')}}</td>
 					</tr>
 
 					<tr>
 						<th>Alamat</th>
-						<td>: {{ucwords($ortu->orang_tua_alamat)}}</td>
+						<td>: {{ucwords($ortu->orang_tua_alamat ?? 'Relasi data not found')}}</td>
 					</tr>
 
 					<tr>
 						<th>Rt/Rw</th>
-						<td>:  {{ucwords($ortu->orang_tua_rt)}}/{{ucwords($ortu->orang_tua_rw)}}</td>
+						<td>:  {{ucwords($ortu->orang_tua_rt ?? 'Relasi data not found')}}/{{ucwords($ortu->orang_tua_rw ?? 'Relasi data not found')}}</td>
 					</tr>
 				</table>
 			</div>
@@ -73,76 +97,76 @@
 				<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
 					History Imunisasi
 				</button>
- -->
-				
-				<center>
-					<h3>PELAYANAN MEJA 3</h3>
-					<h4>(Pelayanan Imunisasi dan ASI Eklusif)</h4>
+			-->
+			
+			<center>
+				<h3>PELAYANAN MEJA 2</h3>
+				<h4>(Penimbangan Berat Badan)</h4>
 
 
-					<form action="{{url('admin/meja-3',$detail->rekam_medis_id)}}/meja-3" method="post">
-						@csrf
-						@method("PUT")
+				<form action="{{url('admin/meja-3',$detail->rekam_medis_id)}}/meja-3" method="post">
+					@csrf
+					@method("PUT")
 
-						<div class="row">
-							<div class="col-md-6">
-								<label for="nama">Jenis Imunisasi</label>
-								<select name="rekam_medis_imunisasi_id" required id="" class="form-control">
-									<option value="" hidden>--Jenis Imunisasi--</option>
-									@foreach($list_imunisasi as $item)
-									<option value="{{$item->imunisasi_id}}">{{ucwords($item->imunisasi_nama)}}</option>
+					<div class="row">
+						<div class="col-md-6">
+							<label for="nama">Jenis Imunisasi</label>
+							<select name="rekam_medis_imunisasi_id" required id="" class="form-control">
+								<option value="" hidden>--Jenis Imunisasi--</option>
+								@foreach($list_imunisasi as $item)
+								<option value="{{$item->imunisasi_id}}">{{ucwords($item->imunisasi_nama)}}</option>
 
-									@endforeach
-								</select>
-							</div>
-							<div class="col-md-6">
-								<label for="nama">Asi Ekslusif</label>
-								<select name="rekam_medis_asi_eksklusif" id="" required class="form-control">
-									<option value="" hidden>Apakah imuniasi eksklusif?</option>
-									<option value="0">Tidak</option>
-									<option value="1">Ya</option>
-								</select>
-							</div>
-
-							<div class="col-md-6 mt-5">
-								<span>Keterangan</span>
-								<textarea name="rekam_medis_keterangan" id="" cols="30" rows="3" class="form-control"></textarea>
-							</div>
-							<div class="col-md-6 mt-5">
-								<span>Masukan Catatan</span>
-								<textarea name="rekam_medis_catatan" id="" cols="30" rows="3" class="form-control"></textarea>
-							</div>
+								@endforeach
+							</select>
 						</div>
-						
-						
-						<button class="btn btn-primary mt-3">SELESAI</button>
-					</form>
-				</center>
-			</div>
-		</div>
+						<div class="col-md-6">
+							<label for="nama">Asi Ekslusif</label>
+							<select name="rekam_medis_asi_eksklusif" id="" required class="form-control">
+								<option value="" hidden>Apakah imuniasi eksklusif?</option>
+								<option value="0">Tidak</option>
+								<option value="1">Ya</option>
+							</select>
+						</div>
 
-		<div class="collapse mt-5" id="collapseExample">
-			<div class="card card-body">
-				<table class="table">
-					<thead>
-						<th>Nama Imunisasi</th>
-						<th>Tempat Imunisasi</th>
-						<th>Tanggal</th>
-						<th>Bulan</th>
-						<th>Tahun</th>
-						<th>Catatan Dokter</th>
-					</thead>
-					<tbody>
-						@foreach($rekam_medis as $rm)
-						<tr>
-							<td>{{$loop->iteration}}</td>
-						</tr>
-						@endforeach
-					</tbody>
-				</table>
-			</div>
+						<div class="col-md-6 mt-5">
+							<span>Keterangan</span>
+							<textarea name="rekam_medis_keterangan" id="" cols="30" rows="3" class="form-control"></textarea>
+						</div>
+						<div class="col-md-6 mt-5">
+							<span>Masukan Catatan</span>
+							<textarea name="rekam_medis_catatan" id="" cols="30" rows="3" class="form-control"></textarea>
+						</div>
+					</div>
+					
+					
+					<button class="btn btn-primary mt-3">SELESAI</button>
+				</form>
+			</center>
 		</div>
 	</div>
+
+	<div class="collapse mt-5" id="collapseExample">
+		<div class="card card-body">
+			<table class="table">
+				<thead>
+					<th>Nama Imunisasi</th>
+					<th>Tempat Imunisasi</th>
+					<th>Tanggal</th>
+					<th>Bulan</th>
+					<th>Tahun</th>
+					<th>Catatan Dokter</th>
+				</thead>
+				<tbody>
+					@foreach($rekam_medis as $rm)
+					<tr>
+						<td>{{$loop->iteration}}</td>
+					</tr>
+					@endforeach
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
 </div>
 
 @endsection

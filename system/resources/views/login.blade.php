@@ -56,47 +56,46 @@
                   <center>
                     <img src="{{ url('public/assets/logo-posyandu-biru.png') }}" width="150px" alt="">
                     <br><br>
-                    <h3>Selamat Datang <br> Sistem Informasi Posyandu</h3>
-                  @if(count($errors) > 0)
- @foreach( $errors->all() as $message )
-  <div class="alert alert-danger display-hide">
-   <button class="close" data-close="alert"></button>
-   <span>{{ $message }}</span>
-  </div>
- @endforeach
-@endif
-                  </center>
-                  <form action="{{ url('login') }}" method="post" class="row g-4">
-                    @csrf
-                    <div class="col-12">
-                      <label>Email<span class="text-danger">*</span></label>
-                      <div class="input-group">
-                        <div class="input-group-text"><i class="bi bi-person-fill"></i></div>
-                        <input type="email" name="email" class="form-control" placeholder="Enter E-Mail">
-                      </div>
+                    <h3>Selamat Datang <br> Sistem Informasi Posyandu Asoka</h3>
+                    @if(count($errors) > 0)
+                    @foreach( $errors->all() as $message )
+                    <div class="alert alert-danger display-hide">
+                     <button class="close" data-close="alert"></button>
+                     <span>{{ $message }}</span>
+                   </div>
+                   @endforeach
+                   @endif
+                 </center>
+                 <form action="{{ url('login') }}" method="post" class="row g-4">
+                  @csrf
+                  <div class="col-12">
+                    <label>Email<span class="text-danger">*</span></label>
+                    <div class="input-group">
+                      <div class="input-group-text"><i class="bi bi-person-fill"></i></div>
+                      <input type="email" name="email" class="form-control" placeholder="Enter E-Mail">
                     </div>
-                    <div class="col-12">
-                      <label>Password<span class="text-danger">*</span></label>
-                      <div class="input-group">
-                        <div class="input-group-text"><i class="bi bi-lock-fill"></i></div>
-                        <input type="password" name="password" class="form-control" placeholder="Enter Password">
-                      </div>
+                  </div>
+                  <div class="col-12">
+                    <label>Password<span class="text-danger">*</span></label>
+                    <div class="input-group">
+                      <div class="input-group-text"><i class="bi bi-lock-fill"></i></div>
+                      <input type="password" name="password" class="form-control" placeholder="Enter Password">
                     </div>
-                    <div class="col-12">
-                      <button type="submit" class="btn btn-primary px-4 float-end mt-4">Masuk</button>
-                    </div>
-                  </form>
-                </div>
+                  </div>
+                  <div class="col-12">
+                    <button type="submit" class="btn btn-primary px-4 float-end mt-4">Masuk</button>
+                  </div>
+                </form>
               </div>
-              <div class="col-md-5 ps-0 d-none d-md-block">
-                <div class="form-right h-100 bg-primary text-white text-center pt-5">
-                  <center>
-                    <img src="{{ url('public/assets/logo-posyandu-putih.png') }}" width="80%" style="margin-top:70pt" alt="">
-                    <br><br><br>
-                    <a href="{{ url('login-admin') }}" class="btn bg-white text-primary">Masuk sebagai Petugas ?</a>
-                    <br>
-                  </center>
-                </div>
+            </div>
+            <div class="col-md-5 ps-0 d-none d-md-block">
+              <div class="form-right h-100 bg-primary text-white text-center pt-5">
+                <center>
+                  <img src="{{ url('public/assets/logo-posyandu-putih.png') }}" width="80%" style="margin-top:70pt" alt="">
+                  <br><br><br>
+                  <a href="{{ url('login-admin') }}" class="btn bg-white text-primary">Masuk sebagai Petugas ?</a>
+                  <br>
+                </center>
               </div>
             </div>
           </div>
@@ -104,43 +103,44 @@
       </div>
     </div>
   </div>
+</div>
 
-  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
-  <script src="{{ url('public/assets/js/vendor/jquery-3.5.1.min.js') }}"></script>
-  <script src="{{ url('public/assets/js/vendor/bootstrap.bundle.min.js') }}"></script>
-  <script src="{{ url('public/assets/js/vendor/OverlayScrollbars.min.js') }}"></script>
-  <script src="{{ url('public/assets/js/vendor/autoComplete.min.js') }}"></script>
-  <script src="{{ url('public/assets/js/vendor/clamp.min.js') }}"></script>
-  <script src="{{ url('public/assets/icon/acorn-icons.js') }}"></script>
-  <script src="{{ url('public/assets/icon/acorn-icons-interface.js') }}"></script>
-  <script src="{{ url('public/assets/icon/acorn-icons-medical.js') }}"></script>
-  <script src="{{ url('public/assets/js/vendor/glide.min.js') }}"></script>
-  <script src="{{ url('public/assets/js/base/helpers.js') }}"></script>
-  <script src="{{ url('public/assets/js/base/globals.js') }}"></script>
-  <script src="{{ url('public/assets/js/base/nav.js') }}"></script>
-  <script src="{{ url('public/assets/js/base/search.js') }}"></script>
-  <script src="{{ url('public/assets/js/base/settings.js') }}"></script>
-  <script src="{{ url('public/assets/js/cs/glide.custom.js') }}"></script>
-  <script src="{{ url('public/assets/js/pages/dashboards.patient.js') }}"></script>
-  <script src="{{ url('public/assets/js/common.js') }}"></script>
-  <script src="{{ url('public/assets/js/scripts.js') }}"></script>
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+<script src="{{ url('public/assets/js/vendor/jquery-3.5.1.min.js') }}"></script>
+<script src="{{ url('public/assets/js/vendor/bootstrap.bundle.min.js') }}"></script>
+<script src="{{ url('public/assets/js/vendor/OverlayScrollbars.min.js') }}"></script>
+<script src="{{ url('public/assets/js/vendor/autoComplete.min.js') }}"></script>
+<script src="{{ url('public/assets/js/vendor/clamp.min.js') }}"></script>
+<script src="{{ url('public/assets/icon/acorn-icons.js') }}"></script>
+<script src="{{ url('public/assets/icon/acorn-icons-interface.js') }}"></script>
+<script src="{{ url('public/assets/icon/acorn-icons-medical.js') }}"></script>
+<script src="{{ url('public/assets/js/vendor/glide.min.js') }}"></script>
+<script src="{{ url('public/assets/js/base/helpers.js') }}"></script>
+<script src="{{ url('public/assets/js/base/globals.js') }}"></script>
+<script src="{{ url('public/assets/js/base/nav.js') }}"></script>
+<script src="{{ url('public/assets/js/base/search.js') }}"></script>
+<script src="{{ url('public/assets/js/base/settings.js') }}"></script>
+<script src="{{ url('public/assets/js/cs/glide.custom.js') }}"></script>
+<script src="{{ url('public/assets/js/pages/dashboards.patient.js') }}"></script>
+<script src="{{ url('public/assets/js/common.js') }}"></script>
+<script src="{{ url('public/assets/js/scripts.js') }}"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-  <!-- Notifikasi -->
-  @foreach(['success', 'warning', 'error', 'info'] as $status)
-  @if (session($status))
-  <script>
-    Swal.fire({
-      icon: "{{ $status }}",
-      title: "{{ strtoupper($status) }}",
-      text: "{{ session($status) }}",
-      showConfirmButton: false,
-      timer: 3000
-    });
-  </script>
-  @endif
-  @endforeach
+<!-- Notifikasi -->
+@foreach(['success', 'warning', 'error', 'info'] as $status)
+@if (session($status))
+<script>
+  Swal.fire({
+    icon: "{{ $status }}",
+    title: "{{ strtoupper($status) }}",
+    text: "{{ session($status) }}",
+    showConfirmButton: false,
+    timer: 3000
+  });
+</script>
+@endif
+@endforeach
 </body>
 </html>

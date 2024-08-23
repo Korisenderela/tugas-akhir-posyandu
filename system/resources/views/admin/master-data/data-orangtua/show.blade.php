@@ -13,7 +13,6 @@
 						<th class="text-white">TB</th>
 						<th class="text-white">BB</th>
 						<th class="text-white">Umur</th>
-						<th class="text-white">Tanggal Imunisasi</th>
 					</tr>
 				</thead>
 
@@ -25,7 +24,6 @@
 						<td>{{$item->rekam_medis_tb}} cm</td>
 						<td>{{$item->rekam_medis_bb}} Kg</td>
 						<td>{{ Carbon\Carbon::parse($item->anak->anak_tanggal_lahir)->diffInMonths(Carbon\Carbon::parse($item->created_at)) }} Bulan</td>
-						<td>{{$item->created_at}}</td>
 					</tr>
 					@endforeach
 				</tbody>

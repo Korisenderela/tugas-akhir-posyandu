@@ -32,7 +32,7 @@
     var ctxtb = document.getElementById('myChartTb').getContext('2d');
     var data = {
       labels: [
-        @foreach ($list_rm->sortByDesc('created_at') as $item)
+        @foreach ($list_rm as $item)
         "Bulan Ke-{{ Carbon\Carbon::parse($item->anak->anak_tanggal_lahir)->diffInMonths(Carbon\Carbon::parse($item->created_at)) }} ",
         @endforeach
         ],
@@ -42,7 +42,7 @@
         borderColor: 'rgba(75, 192, 192, 1)',     // Warna garis tepi bar
         borderWidth: 1,                            // Lebar garis tepi bar
         data: [
-          @foreach ($list_rm->sortByDesc('created_at') as $item)
+          @foreach ($list_rm as $item)
           "{{ucwords($item->rekam_medis_bb) }}",
           @endforeach
         ]                    // Data nilai bar
@@ -68,8 +68,8 @@
 
      var data = {
       labels: [
-        @foreach ($list_rm->sortByDesc('created_at') as $item)
-        "Bulan Ke-{{ Carbon\Carbon::parse($item->anak->anak_tanggal_lahir)->diffInYears(Carbon\Carbon::parse($item->created_at)) }} ",
+        @foreach ($list_rm as $item)
+        "Bulan Ke-{{ Carbon\Carbon::parse($item->anak->anak_tanggal_lahir)->diffInMonths(Carbon\Carbon::parse($item->created_at)) }} ",
         @endforeach
         ],
       datasets: [{
@@ -78,7 +78,7 @@
         borderColor: 'rgba(75, 192, 192, 1)',     // Warna garis tepi bar
         borderWidth: 1,                            // Lebar garis tepi bar
         data: [
-          @foreach ($list_rm->sortByDesc('created_at') as $item)
+          @foreach ($list_rm as $item)
           "{{ucwords($item->rekam_medis_tb) }}",
           @endforeach
         ]                    // Data nilai bar

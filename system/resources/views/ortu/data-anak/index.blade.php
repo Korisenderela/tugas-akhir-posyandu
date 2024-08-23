@@ -47,12 +47,11 @@
 						</div>
 					</div>
 					<div class="mt-4">
-						<a href="{{url('x/rekam-medis')}}" type="button" class="btn btn-sm btn-primary btn-icon btn-icon-start me-2">
+						<a href="{{url('x/data-anak',$item->anak_id)}}/detail" type="button" class="btn btn-sm btn-primary btn-icon btn-icon-start me-2">
 							<i data-acorn-icon="health"></i>
-							<span>Rekam Medis</span>
+							<span>Perkembangan Anak</span>
 						</a>
 
-						<a href="{{url('x/data-anak',$item->anak_id)}}/detail" class="btn btn-sm btn-outline-primary btn-icon btn-icon-start me-2">Update Profil</a>
 					</div>
 				</div>
 			</div>

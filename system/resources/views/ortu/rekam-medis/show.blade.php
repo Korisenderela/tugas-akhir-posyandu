@@ -58,16 +58,11 @@
 				<td>: {{ucwords($detail->admin3->admin_nama)}}</td>
 			</tr>
 
+			
 			<tr>
-				<th width="40%">Keterangan</th>
-				<td>: {{ucwords($detail->rekam_medis_keterangan)}}</td>
+				<th width="40%">Lingkaran Kepala</th>
+				<td>: {{ucwords($detail->lingkaran_kepala)}} Cm</td>
 			</tr>
-
-			<tr>
-				<th width="40%">Catatan Medis</th>
-				<td>: {{ucwords($detail->rekam_medis_catatan)}}</td>
-			</tr>
-
 
 			<tr>
 				<th width="40%">Berat Badan</th>
@@ -80,7 +75,15 @@
 				<td>: {{ucwords($detail->rekam_medis_tb)}} Cm</td>
 			</tr>
 
+			<tr>
+				<th width="40%">Keterangan</th>
+				<td>: {{ucwords($detail->rekam_medis_keterangan)}}</td>
+			</tr>
 
+			<tr>
+				<th width="40%">Catatan Medis</th>
+				<td>: {{ucwords($detail->rekam_medis_catatan)}}</td>
+			</tr>
 
 		</table>
 

@@ -18,6 +18,7 @@ class OrtuAnakController extends Controller
     }
 
     function show(Anak $anak){
+         $data['title'] = "Data Anak Anda";
          $data['list_rm'] = RekamMedis::where('rekam_medis_anak_id',$anak->anak_id)->where('rekam_medis_status_periksa',3)->get();
        return view('ortu.data-anak.show',$data);
    }
