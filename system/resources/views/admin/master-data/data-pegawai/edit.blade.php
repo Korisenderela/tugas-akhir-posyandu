@@ -7,7 +7,7 @@
 			@csrf
 			@method("PUT")
 
-			<h2 class="small-title mt-5">Data Pegawai Posyandu :</h2>
+			<h2 class="small-title mt-5">Data Tim Medis Posyandu :</h2>
 
 			<div class="mb-3 row">
 				<label class="col-lg-2 col-md-3 col-sm-4 col-form-label">Nama</label>

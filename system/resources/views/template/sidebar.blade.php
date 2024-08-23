@@ -98,7 +98,7 @@
 
 					<li>
 						<a href="{{url('admin/master-data/data-pegawai')}}">
-							<span class="label">Data Pegawai</span>
+							<span class="label">Data Tim Medis</span>
 						</a>
 					</li>
 

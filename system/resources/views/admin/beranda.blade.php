@@ -32,7 +32,7 @@
 					<div class="card-body">
 						<center>
 							<h1 class="text-white"><b>{{$jumlahOrtu}}</b></h1>
-							<h3 class="text-white">Jumlah ORTU</h3>
+							<h3 class="text-white">Jumlah Orang Tua</h3>
 						</center>
 					</div>
 				</div>

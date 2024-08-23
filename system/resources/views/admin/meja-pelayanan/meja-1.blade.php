@@ -84,7 +84,7 @@
 				<div class="mt-5">
 					<center>
 					<h3>PELAYANAN MEJA 1</h3>
-					<h4>(Penimbangan Berat Badan)</h4>
+					<h4>(Pengukuran Berat Badan)</h4>
 
 
 					<form action="{{url('admin/meja-1',$detail->rekam_medis_id)}}/meja-1" method="post">
